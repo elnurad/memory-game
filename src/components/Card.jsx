@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-const Card = ({ image }) => (
-    <img src={image} alt="An image of food" />);
+const Card = ({ image, shuffleCards }) => (
+    <img onClick={shuffleCards} src={image} alt="An image of food" />);
 
 export default Card;

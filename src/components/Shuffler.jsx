@@ -10,12 +10,31 @@ const imageFour = require('../assets/04.jpg');
 const imageFive = require('../assets/05.jpg');
 const imageSix = require('../assets/06.jpg');
 
-const images = [{ image: imageOne },
-  { image: imageTwo },
-  { image: imageThree },
-  { image: imageFour },
-  { image: imageFive },
-  { image: imageSix },
+const images = [
+  {
+    image: imageOne,
+    name: 'ramen',
+  },
+  {
+    image: imageTwo,
+    name: 'sushi',
+  },
+  {
+    image: imageThree,
+    name: 'fries',
+  },
+  {
+    image: imageFour,
+    name: 'nuggets',
+  },
+  {
+    image: imageFive,
+    name: 'burger',
+  },
+  {
+    image: imageSix,
+    name: 'pizza',
+  },
 ];
 // const cardsToShuffle = [...cards, ...cards];
 
@@ -25,17 +44,28 @@ const images = [{ image: imageOne },
 
 function Shuffler() {
   const [cardGrid, setCardGrid] = useState([...images, ...images]);
+  // const [foodNames, setFoodNames] = useState([]);
+  // const [score, setScore] = useState(0);
 
-  const gridDisplay = cardGrid.map((card, index) => <Card key={index} image={card.image}/>);
+  const shuffleCards = () => {
+    console.log(cardGrid);
+    const gridCopy = [...cardGrid];
+    gridCopy.sort(() => 0.5 - Math.random());
+    setCardGrid(gridCopy);
+    console.log(gridCopy);
+  };
 
-  // const shuffleCards = () => {
+  // const keepScore = () => {
 
   // }
 
+  const gridDisplay = cardGrid.map((card, index) => <Card shuffleCards={shuffleCards}
+  key={index} image={card.image}/>);
+
   useEffect(() => {
     // eslint-disable-next-line no-alert
-    alert('hello memory game');
-  });
+    shuffleCards();
+  }, []);
 
   return (
     <div className="shuffler">
