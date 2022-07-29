@@ -44,22 +44,39 @@ const images = [
 
 function Shuffler() {
   const [cardGrid, setCardGrid] = useState([...images, ...images]);
-  // const [foodNames, setFoodNames] = useState([]);
-  // const [score, setScore] = useState(0);
+  const [cardsClicked, setCardsClicked] = useState([]);
+  const [bestScore, setBestScore] = useState(0);
+
+  const [score, setScore] = useState(0);
 
   const shuffleCards = () => {
-    console.log(cardGrid);
     const gridCopy = [...cardGrid];
     gridCopy.sort(() => 0.5 - Math.random());
     setCardGrid(gridCopy);
-    console.log(gridCopy);
   };
 
-  // const keepScore = () => {
+  const keepScore = (name) => {
+    if (cardsClicked.includes(name)) {
+      setCardsClicked([]);
+      setScore(0);
+    } else {
+      setCardsClicked((prevCardsClicked) => [name, ...prevCardsClicked]);
+      setScore(score + 1);
+    }
+  };
+  const keepBestScore = () => {
+    if (score > bestScore) {
+      setBestScore(score);
+    }
+  };
+  const keepScoreAndShuffle = (name) => {
+    shuffleCards();
+    keepBestScore();
+    keepScore(name);
+  };
 
-  // }
-
-  const gridDisplay = cardGrid.map((card, index) => <Card shuffleCards={shuffleCards}
+  const gridDisplay = cardGrid.map((card, index) => <Card
+  shuffleCards={() => keepScoreAndShuffle(card.name)}
   key={index} image={card.image}/>);
 
   useEffect(() => {
@@ -69,6 +86,8 @@ function Shuffler() {
 
   return (
     <div className="shuffler">
+       <p>Score: {score}</p>
+       <p>Best Score: {bestScore}</p>
        <div>{gridDisplay}</div>
     </div>
   );

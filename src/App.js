@@ -14,7 +14,7 @@ import './App.css';
 const App = () => (
     <div className="App">
       <h3>Memory Game</h3>
-      <p>Score:</p>
+      {/* <p>Score:</p> */}
       <p>Best Score:</p>
       <Shuffler />
     </div>
