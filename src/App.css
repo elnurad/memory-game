@@ -1,3 +1,47 @@
+body {
+    background-color: rgb(239, 244, 243)33, 230);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+ 
+}
+.titleAndScoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    line-height: 1rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: 0.2em solid rgb(91, 160, 152);
+    
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+    /* background-image: url('./assets/seaweed.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat; */
+
+}
+
 img {
-    width: 15%;
+    width: 20vw;
+    border: 0.5em solid rgb(91, 160, 152);
+    border-radius: 10px;
+}
+
+#gridDisplay {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    
+}
+
+footer { 
+    margin-top: 2.5em;
+    font-size: 1rem;
 }

@@ -14,6 +14,9 @@ const imageSix = require('./assets/06.jpg');
 const imageSeven = require('./assets/07.jpg');
 const imageEight = require('./assets/08.jpg');
 const imageNine = require('./assets/09.jpg');
+const imageTen = require('./assets/10.jpg');
+const imageEleven = require('./assets/11.jpg');
+const imageTwelve = require('./assets/12.jpg');
 
 const images = [
   {
@@ -52,10 +55,22 @@ const images = [
     image: imageNine,
     name: 'iceCream',
   },
+  {
+    image: imageTen,
+    name: 'bento',
+  },
+  {
+    image: imageEleven,
+    name: 'onigiri',
+  },
+  {
+    image: imageTwelve,
+    name: 'pancake',
+  },
 ];
 
 const App = () => {
-  const [cardGrid, setCardGrid] = useState([...images, ...images]);
+  const [cardGrid, setCardGrid] = useState([...images]);
   const [cardsClicked, setCardsClicked] = useState([]);
   const [bestScore, setBestScore] = useState(0);
 
@@ -99,9 +114,15 @@ const App = () => {
 
   return (
     <div className="App">
-       <h3>Memory Game</h3>
+       <div className="titleAndScoreboard">
+         <div id="title">
+       <h1>Memory Game</h1>
+       <p>Get points by clicking on an image but do not click on any image more than once!</p>
+       </div>
        <Scoreboard score={score} bestScore={bestScore} />
+       </div>
       <Shuffler gridDisplay={gridDisplay} />
+      <footer><a href="https://www.freepik.com/vectors/food-illustration">Food illustration vector created by pikisuperstar - www.freepik.com</a></footer>
     </div>
   );
 };
