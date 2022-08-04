@@ -3,7 +3,7 @@
 import React from 'react';
 
 const Scoreboard = ({ score, bestScore }) => (
-        <div>
+        <div className="scoreboard">
         <p>Score: {score}</p>
        <p>Best Score: {bestScore}</p>
        </div>

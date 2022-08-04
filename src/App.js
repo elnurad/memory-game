@@ -115,14 +115,13 @@ const App = () => {
   return (
     <div className="App">
        <div className="titleAndScoreboard">
-         <div id="title">
-       <h1>Memory Game</h1>
-       <p>Get points by clicking on an image but do not click on any image more than once!</p>
-       </div>
-       <Scoreboard score={score} bestScore={bestScore} />
+          <div className="title">
+            <h1>Memory Game</h1>
+         </div>
+          <Scoreboard score={score} bestScore={bestScore} />
        </div>
       <Shuffler gridDisplay={gridDisplay} />
-      <footer><a href="https://www.freepik.com/vectors/food-illustration">Food illustration vector created by pikisuperstar - www.freepik.com</a></footer>
+      <footer><p>Food illustration vector created by pikisuperstar - www.freepik.com</p></footer>
     </div>
   );
 };
