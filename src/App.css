@@ -89,6 +89,10 @@ footer {
     .App {
         margin-top: 1em;
     }
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
 
 
 }
