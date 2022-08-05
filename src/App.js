@@ -99,7 +99,6 @@ const App = () => {
   };
   const keepScoreAndShuffle = (name) => {
     shuffleCards();
-    // keepBestScore();
     keepScore(name);
   };
 

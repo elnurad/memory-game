@@ -1,3 +1,10 @@
+The Memory Game project I created using React.js as part of the Odin Project's curriculum. Get points by clicking on an image but don't click on any more than once!
+
+Live version is hosted at the following [link](https://elnurad.github.io/memory-game/)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
